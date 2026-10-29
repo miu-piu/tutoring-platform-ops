@@ -1,0 +1,78 @@
+name: Новая задача
+description: Создать новую задачу для ручного просмотра и согласования
+title: "[NEW] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Все новые задачи сначала создаются как **New**.
+        Создание задачи не означает, что она принята в работу.
+
+  - type: dropdown
+    id: requester
+    attributes:
+      label: Заказчик
+      description: Кто инициирует задачу?
+      options:
+        - Егор
+        - Вова
+        - Другое
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что нужно изменить и зачем
+      description: Опишите проблему или цель, а не только желаемое действие.
+      placeholder: Сейчас... Нужно, чтобы...
+    validations:
+      required: true
+
+  - type: textarea
+    id: result
+    attributes:
+      label: Ожидаемый результат
+      description: Как должно работать после выполнения задачи?
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приёмки
+      description: По каким проверяемым условиям будет понятно, что задача выполнена правильно?
+      placeholder: |
+        - [ ] Условие 1
+        - [ ] Условие 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: materials
+    attributes:
+      label: Материалы
+      description: Ссылки на прототип, скриншоты, файлы, связанные задачи и другой контекст.
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Ограничения / что не входит в задачу
+      description: Заполните, если в обсуждении явно определили границы задачи.
+
+  - type: textarea
+    id: deadline
+    attributes:
+      label: Срок и причина
+      description: Если есть реальный срок — укажите дату и почему она важна.
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Открытые вопросы
+      description: Что ещё не решено и требует обсуждения до согласования?
+
+  - type: markdown
+    attributes:
+      value: |
+        После создания задача проходит ручной review. Для перехода в работу нужны два отдельных подтверждения: **заказчика** и **исполнителя**.
